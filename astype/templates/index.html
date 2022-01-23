@@ -1,0 +1,90 @@
+<!doctype html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="page_type" content="np-template-header-footer-from-plugin">
+  <title>AmPire</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='nicepage.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Главная.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='icon.css') }}">
+
+  <meta name="generator" content="Nicepage 4.3.3, nicepage.com">
+  <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+
+  <script type="application/ld+json">{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "logo": "image/iszzi.png",
+  "sameAs": []
+}</script>
+  <meta name="theme-color" content="#478ac9">
+  <meta property="og:title" content="Главная">
+  <meta property="og:type" content="website">
+</head>
+<body>
+<header class="u-clearfix u-custom-color-1 u-header u-sticky-5bd8 u-header" id="sec-d154"><div>
+    <table>
+    <tr>
+        <td>
+            <img src="/static/image/img.png" width="50" height="60">
+        </td>
+        <td>
+            <h2>AmPire</h2>
+        </td>
+    </tr>
+</table>
+    </div>
+</header>
+        <h1>Video Conference</h1>
+        <form>
+            <label for="username">Name: </label>
+            <input type="text" name=”username” id="username">
+            <button id="join_leave">Join</button>
+            <button id="share_screen" disabled>Share screen</button>
+            <button id="toggle_chat" disabled>Chat</button>
+            <img id="image" src="static/image/1.png" width="18" height="18" onClick="imgsrc();">
+    <script language="javascript">
+        var i=0;
+        var image=document.getElementById("image");
+        var imgs=new Array('static/image/1.png','static/image/2.png');
+        function imgsrc() {
+            i=(i+1)%2;
+            image.src=imgs[i];
+        }
+    </script>
+        </form>
+        <p id="count">Disconnected.</p>
+        <div id="root">
+            <div id="container" class="container">
+                <div id="local" class="participant"><div></div><div class="label">Me</div></div>
+                <!-- more participants will be added dynamically here -->
+            </div>
+            <div id="chat">
+                <div id="chat-scroll">
+                    <div id="chat-content">
+                        <!-- chat content will be added dynamically here -->
+                    </div>
+                </div>
+                <input id="chat-input" type="text">
+            </div>
+        </div>
+
+<div>
+<div class="social telegram">
+    <a href="https://t.me/mrotonik" target="_blank"><i class="fa fa-paper-plane fa-2x"></i></a>
+</div>
+
+<div class="social github">
+    <a href="https://github.com/mrotonik/tonya" target="_blank"><i class="fa fa-github fa-2x"></i></a>
+</div></div>
+
+        <script src="https://media.twiliocdn.com/sdk/js/video/releases/2.3.0/twilio-video.min.js"></script>
+        <script src="https://media.twiliocdn.com/sdk/js/conversations/releases/1.0.0/twilio-conversations.min.js"></script>
+        <script src="{{ url_for('static', filename='app.js') }}"></script>
+    </body>
+
+</html>
